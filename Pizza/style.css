@@ -1,0 +1,98 @@
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.75;
+  filter: brightness(50%) grayscale(40%);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  font-size: 5vh;
+  color: #ffa74e;
+}
+input {
+  border: 0;
+  background-color: #fff;
+  padding: 1vh;
+  border-radius: 2vh;
+  outline: none;
+}
+.personal {
+  padding-left: 10vh;
+  padding-right: 5vh;
+}
+.personal input {
+  width: 30vh;
+}
+#Confirmar {
+  width: auto;
+}
+label {
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+textarea {
+  padding: auto;
+  width: 80%;
+  height: 10vh;
+}
+.submit {
+  background-color: rgb(124, 127, 143);
+  border: 0;
+  padding: 15px;
+  color: rgb(0, 235, 117);
+  font-size: 16px;
+  border-radius: 25px;
+  width: 250px;
+  margin-top: 25px;
+  box-shadow: 0 0 20px rgba(201, 253, 0.5);
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  vertical-align: top;
+  display: inline-block;
+}
+.pizza {
+  padding-left: 5vh;
+}
+.pizza li {
+  width: auto;
+  padding-right: 1.5vh;
+}
+.pizza input {
+  width: 5vh;
+}
+.pizzaclass {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffa74e;
+}
+#pizzadiv {
+  width: fit-content;
+}
+.Detalles {
+  padding-left: 5vh;
+}
+.cantidad {
+  padding-left: 6vh;
+  float: center;
+}
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}

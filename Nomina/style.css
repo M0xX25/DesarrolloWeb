@@ -1,0 +1,74 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.75;
+  filter: brightness(30%) grayscale(10%);
+}
+ul {
+  padding-left: 10%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nominabody li {
+  vertical-align: top;
+  display: inline-block;
+  padding-right: 2.5vh;
+}
+.nominabody input {
+  width: 15vh;
+}
+h1 {
+  font-size: 4vh;
+  color: #00c71ba6;
+  font-family: Helvetica;
+}
+h2 {
+  font-size: 2vh;
+  color: #ffffff;
+  font-family: Helvetica;
+}
+.divnomin {
+  padding-left: 8%;
+  padding-top: 1vh;
+}
+input {
+  width: 22.5vh;
+  border: 0;
+  background-color: #6c6c6c;
+  padding: 1vh;
+  border-radius: 2vh;
+  outline: none;
+  font-family: Helvetica;
+  color: #fff;
+}
+select {
+  background-color: #6c6c6c;
+  padding: 1vh;
+  border-radius: 2vh;
+  outline: none;
+  font-family: Helvetica;
+  color: #fff;
+  width: 22.5vh;
+}
+#Confirmar {
+  width: auto;
+  background-color: #00690e;
+  font-size: 2vh;
+}
+#boton {
+  padding-top: 1%;
+  padding-left: 2.5%;
+}
+.Informacion {
+  padding-left: 10vh;
+  padding-right: 5vh;
+}
