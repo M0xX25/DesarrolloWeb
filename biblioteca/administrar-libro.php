@@ -15,8 +15,8 @@ $libro= new Libro();
         $crud->actualizar($libro);
         header('Location: index.php');
     }elseif($_GET['accion']=='e'){
-        $libro->setID($_POST['id']);
-        $libro->setNombre($_POST['nombre']);
-        $crud->actualizar($libro);
+        $crud->eliminar($_GET['id']);
+        header('Location: index.php');
+    }elseif($_GET['accion']=='a'){
         header('Location: index.php');
     }

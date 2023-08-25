@@ -1,12 +1,29 @@
 <?php
-    class db{
-        private static $conexion=NULL;
-        private function __construct (){}
+    require_once ('crud_libro.php');
+    require_once ('libro.php');
 
-        public static function concetar (){
-            $pdo_options [PDO::ATTR_ERRMODE]=PDO::ERRMODE_EXCEPTION;
-            self::$conexion= new
-            PDO('mysql:host=localhost;dbname=biblioteca','root','',$pdo_options);
-            return self::$conexion;
-        }
-    }
+    $crud= new CrudLibro();
+    $libro= new Libro();
+
+    $libro=$crud->obtenerlibro($_GET['id']);
+?>
+<html>
+    <head>
+        <title>Actualizar Libro</title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form action="administrar_libro.php" method="post">
+            <table>
+                <tr>
+                    <input type="hidden" name="id" value="<?php echo $libro->getId()?>">
+                    <td>Nombre Libro:</td>
+                    <td> <input type="text" name="nombre" value="<?php echo $libro->getNombre()?>"></td>
+                </tr>
+                <input type="hidden" name="actualizar" value="actualizar">
+            </table>
+            <input type="submit" value="Guardar">
+            <a href="index.php">Volver</a>
+        </form>
+    </body>
+</html>
