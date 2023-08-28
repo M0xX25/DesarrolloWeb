@@ -1,17 +1,13 @@
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-}
-h1 {
-  padding-left: 20vh;
-  font-family: Helvetica;
-  font-weight: bold;
+body {
   color: #fff;
+  font-family: Helvetica;
 }
+
+h1,
 h2 {
-  font-family: Helvetica;
-  font-weight: bold;
-  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 video {
   position: fixed;
@@ -20,55 +16,55 @@ video {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.89;
 }
-input {
+input,
+a {
+  font-family: Helvetica;
+  font-size: medium;
+  padding: 1.5vh 2.25vh 1.5vh 2.25vh;
+  border-radius: 2vh;
+  font-family: Helvetica;
+  color: #fff;
+  background-color: #555555;
+  text-decoration: none;
+  cursor: pointer;
+}
+input[type="text"] {
   width: 30vh;
-  border: 0;
-  background-color: #6c6c6c;
   padding: 1vh;
-  border-radius: 2vh;
-  outline: none;
+  cursor: auto;
+}
+
+#volver {
+  padding-top: 2vh;
+}
+
+.mainIndex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 50%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+}
+
+td {
   font-family: Helvetica;
-  color: #fff;
+  font-size: 20px;
+  border-collapse: collapse;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  padding: 4vh;
 }
-select {
-  background-color: #6c6c6c;
-  padding: 1vh;
-  border-radius: 2vh;
-  outline: none;
-  font-family: Helvetica;
-  color: #fff;
-}
-select option{
-  background-color: #6c6c6c;
-  padding: 1vh;
-  border-radius: 2vh;
-  outline: none;
-  font-family: Helvetica;
-  color: #fff;
-}
-input[type=submit] {  
-  width: 18vh;
-  background-color: #fff;
-  color: #000;
-  font-size: 2vh;
-}
-label {
-  padding-top: 0.5vh;
-  padding-bottom: 0.5vh;
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-}
-ul {
-  list-style: none;
+
+.indextd {
   padding: 0;
-  margin: 0;
-}
-li {
-  padding-left: 10vh;
-  vertical-align: top;
-  display: inline-block;
+  padding-bottom: 5vh;
 }

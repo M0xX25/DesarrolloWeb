@@ -4,21 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Bliblioteca</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css?djshaj">
 </head>
 
 <body>
     <video src="imagenes/Fondo.mp4" autoplay="true" muted="true" loop="true"></video>
-    <h1>BIBLIOTECA</h1>
-    <ul>
-        <form method="post" action="interfazAhorros.php">
-            <h2>Cuentas de Ahorros</h2>
-            <input type="hidden" name="tipo_cuenta" value="ahorros"></input>
-            <label for="numero_cuenta">Número de Cuenta:</label>
-            <input type="number" name="numero_cuenta" id="numero_cuenta" required></input><br><br>                <label for="nombre_cliente">Nombre del Cliente:</label>
-            <input type="text" name="nombre_cliente" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" id="nombre_cliente" required></input><br><br>
-            <input type="submit" name="crear_cuenta" value="Crear Cuenta">
-        </form>
-    </ul>
+    <div class="main">
+        <h1>Administrar Libro</h1>
+        <div class="mainIndex">
+            <table>
+                <td class="indextd">
+                    <h2>Libro</h2>
+                    <a href=" ingresarLibro.php" name="indexbuttom">Ingresar</a>
+                    <a href="mostrarLibro.php" name="indexbuttom">Ver</a>
+                </td>
+                <td class="indextd">
+                    <h2>Autor</h2>
+                    <a href="ingresarAutor.php" name="indexbuttom">Ingresar</a>
+                    <a href="mostrarAutor.php" name="indexbuttom">Ver</a>
+                </td>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>
