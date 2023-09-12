@@ -1,0 +1,70 @@
+body {
+  color: #fff;
+  font-family: Helvetica;
+}
+
+h1,
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 0.89;
+}
+input,
+a {
+  font-family: Helvetica;
+  font-size: medium;
+  padding: 1.5vh 2.25vh 1.5vh 2.25vh;
+  border-radius: 2vh;
+  font-family: Helvetica;
+  color: #fff;
+  background-color: #555555;
+  text-decoration: none;
+  cursor: pointer;
+}
+input[type="text"] {
+  width: 30vh;
+  padding: 1vh;
+  cursor: auto;
+}
+
+#volver {
+  padding-top: 2vh;
+}
+
+.mainIndex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 50%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+}
+
+td {
+  font-family: Helvetica;
+  font-size: 20px;
+  border-collapse: collapse;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  padding: 4vh;
+}
+
+.indextd {
+  padding: 0;
+  padding-bottom: 5vh;
+}
