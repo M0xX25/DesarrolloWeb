@@ -1,7 +1,12 @@
 from flask import Flask, jsonify, request
 import pymysql
+from flask import Flask, request, jsonify, session
+from flask_cors import CORS, cross_origin
+from flask_bcrypt import Bcrypt
+from models import db, User
 
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
 # Database connection
 conn = pymysql.connect(
@@ -24,10 +29,12 @@ def create_usuario():
     email = data['email']
     contraseña = data['contraseña']
     saldo = 0
+
+    hashed_contraseña = bcrypt.generate_password_hash(contraseña).decode('utf-8')
     
     cursor = conn.cursor()
     query = "INSERT INTO usuarios (nombres, apellidos, fecha_nacimiento, genero, cedula, telefono, email, contraseña, saldo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    cursor.execute(query, (nombres, apellidos, fecha_nacimiento, genero, cedula, telefono, email, contraseña, saldo))
+    cursor.execute(query, (nombres, apellidos, fecha_nacimiento, genero, cedula, telefono, email, hashed_contraseña, saldo))
     conn.commit()
     cursor.close()
     
@@ -122,7 +129,6 @@ def recargar_saldo(usuario_id):
 
     return jsonify({'message': 'Recarga de saldo exitosa'})
 
-
 @app.route('/retirar/<int:usuario_id>', methods=['PUT'])
 def retirar_saldo(usuario_id):
     data = request.get_json()
@@ -147,6 +153,33 @@ def retirar_saldo(usuario_id):
     cursor.close()
 
     return jsonify({'message': 'Retiro de saldo exitoso'})
+
+# Ruta para iniciar sesión (LOGIN)
+@app.route("/login", methods=["POST"])
+def login_user():
+    data = request.get_json()
+    email = data["email"]
+    contraseña = data["contraseña"]
+
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
+    user = cursor.fetchone()
+
+    if not user:
+        cursor.close()
+        return jsonify({"error": "Unauthorized Access"}), 401
+
+    # Comprobar la contraseña utilizando bcrypt.check_password_hash
+    if not bcrypt.check_password_hash(user[7], contraseña):
+        cursor.close()
+        return jsonify({"error": "Unauthorized"}), 401
+
+    cursor.close()
+
+    return jsonify({
+        "id": user[0],
+        "email": user[6] 
+    })
 
 if __name__ == '__main__':
     app.run(debug=True)
