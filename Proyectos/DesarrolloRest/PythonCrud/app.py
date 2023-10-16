@@ -24,7 +24,7 @@ def add_vehicle():
             pais = data.get('pais')
 
             cursor = db.cursor()
-            cursor.execute("INSERT INTO vehiculos_db (nombre, modelo, fabricante, pais) VALUES (%s, %s, %s, %s)", (nombre, modelo, fabricante, pais))
+            cursor.execute("INSERT INTO vehiculo (nombre, modelo, fabricante, pais) VALUES (%s, %s, %s, %s)", (nombre, modelo, fabricante, pais))
             db.commit()
             cursor.close()
 
@@ -39,7 +39,7 @@ def add_vehicle():
 @cross_origin()
 def get_vehicles():
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM vehiculos_db")
+    cursor.execute("SELECT * FROM vehiculo")
     result = cursor.fetchall()
     cursor.close()
 
@@ -60,7 +60,7 @@ def get_vehicles():
 @cross_origin()
 def get_vehicle(id):
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM vehiculos_db WHERE id = %s", (id,))
+    cursor.execute("SELECT * FROM vehiculo WHERE id = %s", (id,))
     row = cursor.fetchone()
     cursor.close()
 
@@ -85,7 +85,7 @@ def update_vehicle(id):
     fabricante = request.json['fabricante']
     pais = request.json['pais']
 
-    cursor.execute("UPDATE vehiculos_db SET nombre = %s, modelo = %s, fabricante = %s, pais = %s WHERE id = %s", (nombre, modelo, fabricante, pais, id))
+    cursor.execute("UPDATE vehiculo SET nombre = %s, modelo = %s, fabricante = %s, pais = %s WHERE id = %s", (nombre, modelo, fabricante, pais, id))
     db.commit()
     cursor.close()
 
@@ -96,7 +96,7 @@ def update_vehicle(id):
 def delete_vehicle(id):
     cursor = db.cursor()
 
-    cursor.execute("DELETE FROM vehiculos_db WHERE id = %s", (id,))
+    cursor.execute("DELETE FROM vehiculo WHERE id = %s", (id,))
     db.commit()
     cursor.close()
 
