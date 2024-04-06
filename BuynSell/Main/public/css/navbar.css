@@ -1,0 +1,25 @@
+
+  #search {
+    color: #ffffff;
+  }
+  #navbar {
+    background-color: #232f3e;
+  }
+  #letrasnav {
+    color: #ffffff;
+  }
+  #search {
+    background-color: #9b9b9b;
+    color: #232f3e;
+    align-content: center;
+  }
+  img {
+    width: 50px;
+    height: auto;
+  }
+  a {
+    color: white;
+  }
+  .btn {
+    color: #d02f2c;
+  }
